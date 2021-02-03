@@ -92,7 +92,6 @@ getInput.addEventListener('keyup', function (event) {
 
 function getRating(event) {
     const myID = event.target.id
-    const myClick = event.detail
     const myNumber = event.toElement.className
     const myBody = {
         'value': myNumber
@@ -147,12 +146,10 @@ function getRating(event) {
                                 .then(data => {
 
                                     const ratingNote = data
-                                    console.log(ratingNote);                          
 
                                     if (ratingNote.success === true) {
                                         const ratingMovie = document.getElementById(myID)
                                         const newDiv = document.createElement('div')
-                                        newDiv.setAttribute('class', 'testImportant')
                                         ratingMovie.appendChild(newDiv)
                                         const newButton = document.createElement('button')
                                         newButton.setAttribute('class', 'ratingNoteCss px-2 fw-bold')

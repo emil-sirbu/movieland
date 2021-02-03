@@ -48,12 +48,10 @@ fetch(`${myEndpoint}authentication/token/new?api_key=${API_KEY}`, {
                             .then(response => response.json())
                             .then(data => {
 
-                                const testm = data.results
-                                console.log(testm);
-
-                                const favoriteMovie = testm.sort((a, b) => (a.vote_average < b.vote_average) ? 1 : -1)
+                                const favoriteMovie = data.results
+                                const sortMovieByVote = favoriteMovie.sort((a, b) => (a.vote_average < b.vote_average) ? 1 : -1)
                            
-                                favoriteMovie.forEach((key) => {                         
+                                sortMovieByVote.forEach((key) => {                         
                                     const titleRecomandation = document.getElementById('listMovieFavorit')
                                     const newDiv = document.createElement('div')
                                     newDiv.setAttribute('class', 'column justify-content-center col-xl-2 col-lg-3 col-md-4 col-6 mb-5')
