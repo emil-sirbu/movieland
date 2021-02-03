@@ -1,0 +1,94 @@
+/* MyFavoriteCollection Only*/
+.headerColorFavorit {
+    background: linear-gradient(to left top, rgb(81, 200, 255), rgba(137, 74, 255, 0.623));
+}
+
+/* MyMovieCollection & MyFavoriteCollection*/
+.headerColor {
+    background: linear-gradient(to right top, rgb(81, 200, 255), rgba(137, 74, 255, 0.623));
+}
+
+.ratingNoteCss {
+    margin-left: 5px;
+    border-radius: 25px;
+    border: solid 1px black;
+    background: linear-gradient(to right top, rgb(255, 217, 0), rgba(137, 74, 255, 0.623));
+}
+
+.ratingNoteCss:not(:disabled) {
+    cursor: unset;
+}
+
+.ratingNoteCss:focus {
+    outline: none;
+}
+
+.colorSearchButton {
+    background: linear-gradient(to right top, rgb(250, 239, 176), rgba(137, 74, 255));
+}
+
+.colorSearchButton:hover {
+    color: rgb(247, 247, 247);
+}
+
+.searchBar {
+    width: 150%;
+}
+
+input:focus {
+    outline: none;
+}
+
+.roundedButtons {
+    border-radius: 25px;
+    border: none;
+}
+
+.roundedButtons:focus {
+    outline: none;
+}
+
+.colorMyColButton:hover {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right top, rgb(250, 239, 176), rgba(137, 74, 255));
+}
+
+.starDiv img {
+    margin: 1.5px;
+    transition: transform .2s;
+}
+
+.starDiv img:hover {
+    transform: scale(1.45);
+}
+
+.starDiv img:not(:disabled) {
+    cursor: pointer;
+}
+
+.parentDiv {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.mainImg {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.heartImg {
+    position: absolute;
+    top: 5px;
+    left: 115px;
+    transition: transform .2s;
+}
+
+.heartImg:hover {
+    transform: scale(1.45);
+}
+
+.heartImg:not(:disabled) {
+    cursor: pointer;
+}
