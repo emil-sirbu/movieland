@@ -82,7 +82,7 @@ getInput.addEventListener('keyup', function (event) {
     if (event.defaultPrevented) {
         return;
     }
-    
+
     let key = event.keyCode;
     if (key === 13) {
         searchMovie();
@@ -149,12 +149,23 @@ function getRating(event) {
 
                                     if (ratingNote.success === true) {
                                         const ratingMovie = document.getElementById(myID)
-                                        const newDiv = document.createElement('div')
-                                        ratingMovie.appendChild(newDiv)
-                                        const newButton = document.createElement('button')
-                                        newButton.setAttribute('class', 'ratingNoteCss px-2 fw-bold')
-                                        newButton.textContent = myNumber
-                                        newDiv.appendChild(newButton)
+                                        const checkTheButton = ratingMovie.querySelector('button')
+                                        if (checkTheButton === null) {
+                                            const newDiv = document.createElement('div')
+                                            ratingMovie.appendChild(newDiv)
+                                            const newButton = document.createElement('button')
+                                            newButton.setAttribute('class', 'ratingNoteCss px-2 fw-bold')
+                                            newButton.textContent = myNumber
+                                            newDiv.appendChild(newButton)
+                                        } else {
+                                            checkTheButton.remove();
+                                            const newDiv = document.createElement('div')
+                                            ratingMovie.appendChild(newDiv)
+                                            const newButton = document.createElement('button')
+                                            newButton.setAttribute('class', 'ratingNoteCss px-2 fw-bold')
+                                            newButton.textContent = myNumber
+                                            newDiv.appendChild(newButton)
+                                        }
                                     }
                                 });
                         });
