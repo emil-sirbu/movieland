@@ -149,22 +149,20 @@ function getRating(event) {
 
                                     if (ratingNote.success === true) {
                                         const ratingMovie = document.getElementById(myID)
+                                        function createDisplayRating() {
+                                            const newDiv = document.createElement('div')
+                                            ratingMovie.appendChild(newDiv)
+                                            const newButton = document.createElement('button')
+                                            newButton.setAttribute('class', 'ratingNoteCss px-2 fw-bold')
+                                            newButton.textContent = myNumber
+                                            newDiv.appendChild(newButton)
+                                        }
                                         const checkTheButton = ratingMovie.querySelector('button')
                                         if (checkTheButton === null) {
-                                            const newDiv = document.createElement('div')
-                                            ratingMovie.appendChild(newDiv)
-                                            const newButton = document.createElement('button')
-                                            newButton.setAttribute('class', 'ratingNoteCss px-2 fw-bold')
-                                            newButton.textContent = myNumber
-                                            newDiv.appendChild(newButton)
+                                            createDisplayRating()
                                         } else {
                                             checkTheButton.remove();
-                                            const newDiv = document.createElement('div')
-                                            ratingMovie.appendChild(newDiv)
-                                            const newButton = document.createElement('button')
-                                            newButton.setAttribute('class', 'ratingNoteCss px-2 fw-bold')
-                                            newButton.textContent = myNumber
-                                            newDiv.appendChild(newButton)
+                                            createDisplayRating()
                                         }
                                     }
                                 });
