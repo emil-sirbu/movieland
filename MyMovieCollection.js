@@ -1,8 +1,8 @@
 const API_KEY = 'd061fa81cdd7349c114ca5fb27675263';
 const myEndpoint = 'https://api.themoviedb.org/3/';
 const startUrlImg = 'https://image.tmdb.org/t/p/original';
-const starImg = './img/star_for_raiting.png';
-const favoriteButton = './img/heart_img.png';
+const starImg = './assets/star_for_raiting.png';
+const favoriteButton = './assets/heart_img.png';
 const accountId = 9995068;
 
 
@@ -92,7 +92,7 @@ getInput.addEventListener('keyup', function (event) {
 
 function getRating(event) {
     const myID = event.target.id
-    const myNumber = event.toElement.className
+    const myNumber = event.target.className
     const myBody = {
         'value': myNumber
     }
@@ -173,7 +173,7 @@ function getRating(event) {
 
 
 function markFavorite(event) {
-    const myID = event.toElement.classList[1]
+    const myID = event.target.classList[1]
     const myBody = {
         'media_type': 'movie',
         'media_id': myID,
@@ -217,6 +217,7 @@ function markFavorite(event) {
                         .then(data => {
 
                             const sessionId = data.session_id;
+                            console.log(myID);
 
                             fetch(`${myEndpoint}account/${accountId}/favorite?api_key=${API_KEY}&session_id=${sessionId}`, {
                                 method: 'POST',
