@@ -1,8 +1,8 @@
 const API_KEY = 'd061fa81cdd7349c114ca5fb27675263';
 const myEndpoint = 'https://api.themoviedb.org/3/';
 const startUrlImg = 'https://image.tmdb.org/t/p/original';
-const starImg = './assets/star_for_raiting.png';
-const favoriteButton = './assets/heart_img.png';
+const starImg = '/src/assets/star_for_raiting.png';
+const favoriteButton = '/src/assets/heart_img.png';
 const accountId = 9995068;
 
 
